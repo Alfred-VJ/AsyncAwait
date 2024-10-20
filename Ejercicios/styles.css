@@ -46,3 +46,22 @@ h1{
     color: #666666;
     line-height: 1.4;
 }
+.search-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+.input-search{
+    width: 70%;
+    height: 40px;
+
+}
+.btn-search{
+    width: 10%;
+    height: 40px;
+    margin-left: 20px;
+    background: blue;
+    color: white;
+}
