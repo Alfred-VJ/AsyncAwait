@@ -1,10 +1,10 @@
 async function getAllContries(){
     let response = await fetch("https://restcountries.com/v3.1/all");
-    let data = await response.json();
-    console.log({data});
+   return await response.json();
 }
 
-function renderCountries(countries) {
+ async function renderCountries() {
+    const countries = await getAllContries();
     const container = document.getElementById("countriesContainer");
 
     
@@ -31,12 +31,9 @@ function renderCountries(countries) {
         
         card.appendChild(flag);
         card.appendChild(name);
-        card.appendChild(description);
-
-    console.log("******************")        
+        card.appendChild(description);      
         container.appendChild(card);
     }
 }
 
-
-getAllContries();
+renderCountries();
