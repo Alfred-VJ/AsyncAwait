@@ -38,22 +38,23 @@ async function getAllContries(){
 
 renderCountries();
 
-async function search(){
+async function search(countryName){
     //Crear tu lógica
     const url = "https://restcountries.com/v3.1/name/";
     try {
-        let response = await fetch(url + "mexico");
+        let response = await fetch(url + countryName);
         let data = await response.json()
         if(data.status == 404){
             //Aquí renderizas la pagina pageNotFound.html
             console.error("Renderizas la pagina de not found") 
         }else{
+            let data = await response.json()
             console.log({data})
             renderCountriesSearch(data)
         }
     } catch (error) {
         //Aquí renderizas la pagina pageNotFound.html
-        console.error("Soy el error entre al catch")
+        console.error("Soy el error entre al catch", error)
     }
 }
  function renderCountriesSearch(countries) {
