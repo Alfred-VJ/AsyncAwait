@@ -57,6 +57,7 @@ async function search(countryName){
         console.error("Soy el error entre al catch", error)
     }
 }
+search(data)
  function renderCountriesSearch(countries) {
    
     const container = document.getElementById("countriesContainer");
